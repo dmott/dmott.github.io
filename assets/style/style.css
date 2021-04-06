@@ -1,0 +1,195 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {font-size: 1em;}
+
+body {
+  background-color: white;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #2f0025;
+}
+
+p {
+	margin-bottom: 1.3em;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 1.3px;
+	line-height: 1.75em;
+}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 3.157em;
+}
+h1.main {
+	font-size: 6em;
+}
+
+h2 {font-size: 2.369em;}
+
+h3 {font-size: 1.777em;}
+
+h4 {font-size: 1.333em;}
+
+small, .font_small {font-size: 0.75em;}
+h1, .centered {
+	text-align: center;
+}
+
+.flex.container {
+	display: flex;
+	align-items: top;
+}
+.contained, .container {
+	max-width: 1024px;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 40px;
+}
+.container {
+	background: rgba(0, 0, 0, 0.09);
+}
+.centered {
+	text-align: center;
+}
+.centered.container {
+	padding: 10px;
+}
+
+.flex.container div {
+	margin: 10px;
+}
+.flex.container h2,
+.centered.container h2,
+.flex.container h3,
+.centered.container h3,
+.flex.container h4,
+.centered.container h4 {
+	margin-top: 0;
+}
+.flex-one-third, .flex-two-thirds, .flex-one-half {
+	align-self: flex-start;
+}
+.flex-one-third {
+	width: 33%;
+}
+
+.flex-two-thirds {
+	width: 67%;
+}
+
+.flex-one-half {
+	width: 50%;
+}
+
+.flex.container div.circular-image {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	overflow: hidden;
+}
+
+.circular-image img {
+	width: 100%;
+	height: auto;
+}
+
+section {
+	background-size: cover;
+	padding: 20px 0 40px 0;
+}
+
+section:nth-child(odd) {
+	background-image: url(../images/pattern1.png);
+}
+
+section:nth-child(even) {
+	background-image: url(../images/pattern2.png);
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 2px solid #000;
+}
+a:hover {
+	color: #777;
+	border-bottom: 2px solid #777;
+}
+strong {
+	font-weight: bold;
+}
+
+@media screen and (max-width: 650px) {
+	h2 {
+		text-align: center;
+	}
+	.flex.container {
+		display: block;
+	}
+	.flex-one-third,
+	.flex-two-thirds,
+	.flex-one-half {
+		width: 100%;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+	.flex-one-third {
+		text-align: center;
+		padding-top: 20px;
+	}
+}
