@@ -1,195 +1,169 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+html {
+  font-family: serif;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
-html {font-size: 1em;}
-
-body {
-  background-color: white;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 400;
-  line-height: 1.45;
-  color: #2f0025;
+#header-image   	{ 
+	grid-area: header-image;
+	display: inline-grid;
 }
 
-p {
-	margin-bottom: 1.3em;
-	font-family: 'Open Sans', sans-serif;
-	letter-spacing: 1.3px;
-	line-height: 1.75em;
+#header-title   	{ grid-area: header-title;   }
+#about-me 				{ grid-area: about-me; }
+#contact          { grid-area: contact; }
+#skills           { grid-area: skills; }
+#education        { grid-area: education; }
+#work-experience 	{ grid-area: work-experience; }
+
+#about-me, #sidebar, #work-experience {
+	border-top: 1px solid black;
+}
+
+.resume-container {
+	display: grid;
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+
+  grid-template-areas:
+    "header-image"
+    "header-title"
+    "about-me"
+    "contact"
+    "work-experience"
+    "skills"
+    "education";
+	grid-template-columns: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .resume-container {
+    grid-template-areas:
+      "header-image header-title"
+      "header-image about-me"
+      "contact work-experience"
+      "skills work-experience"
+      "education work-experience";
+    grid-template-columns: 35% 65%;
+    grid-auto-rows: auto auto auto auto 1fr;
+  }
 }
 
 h1, h2, h3, h4 {
-  margin: 1.414em 0 0.5em;
-  font-weight: inherit;
-  line-height: 1.2;
+	font-family: sans-serif;
+	line-height: calc(2px + 2ex + 2px);
+	margin: 0;
 }
 
-h1 {
-  margin: 40px 0;
-  font-size: 3.157em;
-}
-h1.main {
-	font-size: 6em;
-}
+section { padding: 20px; }
 
-h2 {font-size: 2.369em;}
+h1 { font-size: 2.6em; text-decoration: underline; }
+h2 { font-size: 2.3em; }
+h3 { font-size: 1.7em; }
+h4 { font-size: 1.25em; }
 
-h3 {font-size: 1.777em;}
-
-h4 {font-size: 1.333em;}
-
-small, .font_small {font-size: 0.75em;}
-h1, .centered {
-	text-align: center;
-}
-
-.flex.container {
-	display: flex;
-	align-items: top;
-}
-.contained, .container {
-	max-width: 1024px;
-	width: 100%;
-	margin: 0 auto;
-	margin-bottom: 40px;
-}
-.container {
-	background: rgba(0, 0, 0, 0.09);
-}
-.centered {
-	text-align: center;
-}
-.centered.container {
-	padding: 10px;
-}
-
-.flex.container div {
-	margin: 10px;
-}
-.flex.container h2,
-.centered.container h2,
-.flex.container h3,
-.centered.container h3,
-.flex.container h4,
-.centered.container h4 {
-	margin-top: 0;
-}
-.flex-one-third, .flex-two-thirds, .flex-one-half {
-	align-self: flex-start;
-}
-.flex-one-third {
-	width: 33%;
-}
-
-.flex-two-thirds {
-	width: 67%;
-}
-
-.flex-one-half {
-	width: 50%;
-}
-
-.flex.container div.circular-image {
+.circular-image {
 	border-radius: 50%;
-	width: 200px;
-	height: 200px;
 	margin: auto;
 	overflow: hidden;
+	align-self: center;
 }
 
 .circular-image img {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+}
+
+#header-title h2 {
+  font-weight: 100;
+}
+
+#contact h1, #skills h1, #education h1 {
+	text-align: center;
+	font-size: 1.7em;
+  margin: 20px 0;
+}
+
+#contact, #skills, #education {
+	margin: 20px 0;
+}
+
+#contact main {
+	display: flex;
+	justify-content: space-around;
+}
+
+#contact a {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#contact a:hover {
+	background: lightgrey;
+}
+
+.education {
+	padding: 10px 20px;
+}
+.education header {
+	font-size: 1.25em;
+	font-weight: 600;
+	font-family: sans-serif;
+}
+
+.work-experience {
+	margin: 20px 0;
+	padding: 10px;
+}
+
+.work-experience header,
+.education header {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.work-experience time {
+	align-self: start;
+}
+
+.work-experience h3 {
+  font-weight: 100;
+}
+
+#work-experience .work-experience:nth-child(even),
+#education .education:nth-child(even){
+	background: lightgrey;
+}
+
+#skills table {
+	border-collapse: collapse;
+}
+
+#skills table, #skills tr {
 	width: 100%;
-	height: auto;
 }
 
-section {
-	background-size: cover;
-	padding: 20px 0 40px 0;
+#skills td {
+	border: 1px solid black;
+}
+#skills tr td:first-child {
+	width: 50%;
+}
+#skills tr td:last-child {
+	width: 40%;
 }
 
-section:nth-child(odd) {
-	background-image: url(../images/pattern1.png);
+.skill-level {
+	display: inline-block;
+	width: 100%;
+	height: 20px;
+	background: black;
 }
 
-section:nth-child(even) {
-	background-image: url(../images/pattern2.png);
-}
-
-a {
-	color: #000;
-	text-decoration: none;
-	border-bottom: 2px solid #000;
-}
-a:hover {
-	color: #777;
-	border-bottom: 2px solid #777;
-}
-strong {
-	font-weight: bold;
-}
-
-@media screen and (max-width: 650px) {
-	h2 {
-		text-align: center;
-	}
-	.flex.container {
-		display: block;
-	}
-	.flex-one-third,
-	.flex-two-thirds,
-	.flex-one-half {
-		width: 100%;
-		margin-bottom: 20px;
-		padding-bottom: 20px;
-	}
-	.flex-one-third {
-		text-align: center;
-		padding-top: 20px;
-	}
-}
+.skill-10 { width: 100%; }
+.skill-9 { width: 90%; }
+.skill-8 { width: 80%; }
+.skill-7 { width: 70%; }
